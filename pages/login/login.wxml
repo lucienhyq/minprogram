@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class="topNavBox" style="height:{{statusBarHeight + (408 - statusBarHeight)}}rpx;width:100%;"></view>
+<view class="contenBox">
+	<view class="userImg">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<view class="userName">
+		<open-data type="userNickName"></open-data>
+	</view>
+	<view class="button_1" catchtap="getUserProfileTap" >
+		授权登录
+		<button catchtap="getUserProfileTap"></button>
+	</view>
+	<view class="button_2" catchtap="gomember">
+		暂不登录
+		<button catchtap="gomember" ></button>
+	</view>
+</view>

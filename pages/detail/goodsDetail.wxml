@@ -1,0 +1,8 @@
+<!--pages/detail/goodsDetail.wxml-->
+<view class="bannerTop" style="width:100%;">
+  <image style="width:100%;" src="{{goodInfo.goodimg}}" mode="widthFix" alt=""/>
+</view>
+<view class="goodsTitle">
+  <view class="title">{{goodInfo.title}}</view>
+  <view class="price">￥{{goodInfo.course_price}}</view>
+</view>

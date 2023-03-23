@@ -1,0 +1,5 @@
+<!--pages/member/member_u.wxml-->
+<navigator url="/pages/login/login">
+  <text>登录</text>
+</navigator>
+<text>欢迎</text>
