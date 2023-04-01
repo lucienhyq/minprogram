@@ -17,9 +17,44 @@ Page({
       this.setData({
         id: options.id
       })
+      this.getData();
+    }
+    if (options.urls) {
+      this.setData({
+        urls: options.urls
+      })
+      this.getUrls();
     }
     console.log(this.data.id)
-    this.getData();
+  },
+  getUrls() {
+    wx.showLoading({
+      title: '加载中',
+    })
+    app._getNetWork({
+      url: "apitest/getArticle",
+      data: {
+        urls: this.data.urls
+      },
+      success: (resdata) => {
+        wx.hideLoading()
+        let res = resdata.data;
+        let bodyHtml = res.data.bodyHtml.conten;
+        // let arr = [];
+        // for (let i = 0; i < bodyHtml.length; i++) {
+        //   console.log(bodyHtml[i])
+        // }
+        // console.log(arr)
+        this.setData({
+          bodyHtml
+        })
+        console.log(bodyHtml)
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        console.log(res);
+      }
+    });
   },
   getData() {
     wx.showLoading({
@@ -28,14 +63,14 @@ Page({
     app._getNetWork({
       url: "apitest/getCourse",
       data: {
-        id:this.data.id
+        id: this.data.id
       },
       success: (resdata) => {
         wx.hideLoading()
         let res = resdata.data;
         console.log(res.data.data[0])
         this.setData({
-          goodInfo:res.data.data[0]
+          goodInfo: res.data.data[0]
         })
       },
       fail: function (res) {
@@ -92,5 +127,5 @@ Page({
   onShareAppMessage() {
 
   },
-  
+
 })

@@ -38,4 +38,4 @@
     <view class="title">{{item.title}}</view>
   </view>
 </view>
-<rich-text nodes="{{bodyHtml}}"/>
+<!-- <rich-text nodes="{{bodyHtml}}"/> -->

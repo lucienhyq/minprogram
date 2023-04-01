@@ -42,13 +42,13 @@ Page({
     })
   },
   toWebView(e){
-    console.log(e)
     let urls = e.currentTarget.dataset.url;
-    wx.showToast({
-      title: '暂未开通',
-      duration:1000,
-      icon:'none'
-    })
+    // wx.showToast({
+    //   title: '暂未开通',
+    //   duration:1000,
+    //   icon:'none'
+    // })
+    console.log(urls)
     wx.navigateTo({
       url: '/pages/detail/goodsDetail?urls='+urls,
     })
