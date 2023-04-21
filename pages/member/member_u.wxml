@@ -1,5 +1,9 @@
 <!--pages/member/member_u.wxml-->
-<navigator url="/pages/login/login">
+<!-- <navigator url="/pages/login/login">
   <text>登录</text>
 </navigator>
-<text>欢迎</text>
+<text>欢迎</text> -->
+
+<view class="userBox" catchtap="tologin">
+  授权登录
+</view>

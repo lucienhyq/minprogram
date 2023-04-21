@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: null
+    id: null,
+    bodyHtml:true
   },
 
   /**
@@ -25,6 +26,9 @@ Page({
       })
       this.getUrls();
     }
+    wx.setNavigationBarTitle({
+      title: '新闻',
+    })
     console.log(this.data.id)
   },
   getUrls() {
@@ -39,12 +43,18 @@ Page({
       success: (resdata) => {
         wx.hideLoading()
         let res = resdata.data;
-        let bodyHtml = res.data.bodyHtml.conten;
-        // let arr = [];
-        // for (let i = 0; i < bodyHtml.length; i++) {
-        //   console.log(bodyHtml[i])
-        // }
-        // console.log(arr)
+        let bodyHtml = res.data.bodyHtml;
+        if(bodyHtml.length == 0){
+          wx.showToast({
+            title: '内容暂无法显示',
+            icon:'none',
+          })
+          wx.navigateBack({
+            delta: 1,
+          })
+          return
+        }
+        console.log(res.data.bodyHtml,'dddddddd')
         this.setData({
           bodyHtml
         })
@@ -70,7 +80,8 @@ Page({
         let res = resdata.data;
         console.log(res.data.data[0])
         this.setData({
-          goodInfo: res.data.data[0]
+          goodInfo: res.data.data[0],
+          bodyHtml:false
         })
       },
       fail: function (res) {

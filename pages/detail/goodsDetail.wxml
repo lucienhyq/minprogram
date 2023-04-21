@@ -1,8 +1,29 @@
 <!--pages/detail/goodsDetail.wxml-->
-<view class="bannerTop" style="width:100%;">
-  <image style="width:100%;" src="{{goodInfo.goodimg}}" mode="widthFix" alt=""/>
+<block wx:if="{{!bodyHtml}}">
+  <view class="bannerTop" style="width:100%;">
+    <image style="width:100%;" src="{{goodInfo.goodimg}}" mode="widthFix" alt="" />
+  </view>
+  <view class="goodsTitle">
+    <view class="title">{{goodInfo.title}}</view>
+    <view class="price">￥{{goodInfo.course_price}}</view>
+  </view>
+</block>
+<view wx:else style="padding-bottom: 100rpx;">
+  <view wx:for="{{bodyHtml}}" wx:key="index" class="contenBox">
+    <image src="{{item}}" alt="" mode="widthFix" wx:if="{{utils.fittle(item)}}" style="margin-bottom: 10rpx;border-radius: 10rpx;" />
+    <text wx:if="{{!utils.fittle(item)}}" style="font-size: 32rpx;color: #999">{{item}}</text>
+  </view>
 </view>
-<view class="goodsTitle">
-  <view class="title">{{goodInfo.title}}</view>
-  <view class="price">￥{{goodInfo.course_price}}</view>
-</view>
+
+<wxs module="utils">
+  var fittle = function (conten) {
+    if (conten.indexOf('https') > -1) {
+      return true
+    } else {
+      return false
+    }
+  }
+  module.exports = {
+    fittle: fittle
+  }
+</wxs>

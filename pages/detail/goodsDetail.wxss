@@ -1,1 +1,10 @@
 /* pages/detail/goodsDetail.wxss */
+.contenBox{
+  width: 100%;
+  padding: 0 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.contenBox image{
+  width: 100%;
+}
