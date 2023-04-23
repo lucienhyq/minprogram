@@ -17,7 +17,7 @@
 
 <wxs module="utils">
   var fittle = function (conten) {
-    if (conten.indexOf('https') > -1) {
+    if (conten.indexOf('http') > -1) {
       return true
     } else {
       return false

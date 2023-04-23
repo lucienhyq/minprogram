@@ -1,6 +1,6 @@
 // app.js
-// const host = "http://localhost:3000/"
-const host = "https://lucien.freehk.svipss.top/"
+const host = "http://localhost:3000/"
+// const host = "https://lucien.freehk.svipss.top/"
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -98,7 +98,7 @@ App({
       method: method,
       data: data,
       header: headers,
-      timeout: 10000,
+      timeout: 20000,
       success: (res) => {
         if (res.data.result == 0 && (res.data.msg === "请登录" || res.data.msg === "未登录")) {
           this.login_state(_ObjData, "get");
