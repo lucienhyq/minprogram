@@ -10,7 +10,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     // canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
-    canIUseOpenData: false// 如需尝试获取用户信息可改为false
+    canIUseOpenData: false // 如需尝试获取用户信息可改为false
   },
   // 事件处理函数
   bindViewTap() {
@@ -29,47 +29,51 @@ Page({
       title: '篮球新闻',
     })
   },
-  onShareAppMessage:function(e){
-    return{
-      title:'篮球新闻'
+  onShareAppMessage: function (e) {
+    return {
+      title: '篮球新闻'
     }
   },
-  toDetail(e){
+  toDetail(e) {
     console.log(e)
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/detail/goodsDetail?id='+id,
+      url: '/pages/detail/goodsDetail?id=' + id,
     })
   },
-  toWebView(e){
-    let urls = e.currentTarget.dataset.url;
-    // wx.showToast({
-    //   title: '暂未开通',
-    //   duration:1000,
-    //   icon:'none'
-    // })
-    console.log(urls)
-    wx.navigateTo({
-      url: '/pages/detail/goodsDetail?urls='+urls,
-    })
+  toWebView(e) {
+    let {
+      item,
+      news
+    } = e.currentTarget.dataset;
+    if (news) {
+      wx.navigateTo({
+        url: '/pages/detail/goodsDetail?id=' + item.id + '&news=news',
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/detail/goodsDetail?id=' + item.id,
+      })
+    }
+
   },
-  getNews(){
+  getNews() {
     wx.showLoading({
       title: '加载中',
     })
     app._getNetWork({
       url: "apitest/firstHome",
-      success: (resdata)=> {
+      success: (resdata) => {
         wx.hideLoading()
         let res = resdata.data;
         console.log(res)
         this.setData({
-          newsList : res.data.json,
-          course:res.data.course,
-          referee:res.data.referee
+          newsList: res.data.json,
+          course: res.data.course,
+          referee: res.data.referee
         })
       },
-      fail: function(res) {
+      fail: function (res) {
         wx.hideLoading();
         console.log(res);
       }

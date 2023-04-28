@@ -92,6 +92,9 @@
   border-radius: 10rpx;
   margin-right: 20rpx;
 }
+.lis .imgNews{
+  flex: 1;
+}
 
 .lis .img image {
   width: 100%;

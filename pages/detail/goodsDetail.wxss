@@ -1,10 +1,22 @@
 /* pages/detail/goodsDetail.wxss */
-.contenBox{
+.contenBox {
   width: 100%;
   padding: 0 20rpx;
   overflow: hidden;
   box-sizing: border-box;
 }
-.contenBox image{
+
+.contenBox image {
   width: 100%;
+}
+
+.newsBox {
+  padding: 0 20rpx;
+}
+
+.newsBox .title {
+  font-size: 40rpx;
+  font-weight: bold;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
 }

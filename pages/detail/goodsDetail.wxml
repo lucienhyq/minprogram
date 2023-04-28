@@ -1,5 +1,5 @@
 <!--pages/detail/goodsDetail.wxml-->
-<block wx:if="{{!bodyHtml}}">
+<block wx:if="{{!news}}">
   <view class="bannerTop" style="width:100%;">
     <image style="width:100%;" src="{{goodInfo.goodimg}}" mode="widthFix" alt="" />
   </view>
@@ -8,11 +8,10 @@
     <view class="price">￥{{goodInfo.course_price}}</view>
   </view>
 </block>
-<view wx:else style="padding-bottom: 100rpx;">
-  <view wx:for="{{bodyHtml}}" wx:key="index" class="contenBox">
-    <image src="{{item}}" alt="" mode="widthFix" wx:if="{{utils.fittle(item)}}" style="margin-bottom: 10rpx;border-radius: 10rpx;" />
-    <text wx:if="{{!utils.fittle(item)}}" style="font-size: 32rpx;color: #999">{{item}}</text>
-  </view>
+<view wx:else style="padding-bottom: 100rpx;" class="newsBox">
+  <view class="title">{{info.title}}</view>
+  <video src="{{info.videoSrc}}" wx:if="{{info.videoSrc}}" style="width: 100%;height: 500rpx;"/>
+  <rich-text nodes="{{info.conten}}" />
 </view>
 
 <wxs module="utils">

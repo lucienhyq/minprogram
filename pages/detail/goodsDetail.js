@@ -7,7 +7,8 @@ Page({
    */
   data: {
     id: null,
-    bodyHtml:true
+    bodyHtml: true,
+    news:false
   },
 
   /**
@@ -18,47 +19,35 @@ Page({
       this.setData({
         id: options.id
       })
-      this.getData();
     }
-    if (options.urls) {
+    if (options.news) {
       this.setData({
-        urls: options.urls
+        news:true
       })
-      this.getUrls();
+      this.getNews();
+    } else {
+      this.getData();
     }
     wx.setNavigationBarTitle({
       title: '新闻',
     })
     console.log(this.data.id)
   },
-  getUrls() {
+  getNews() {
     wx.showLoading({
       title: '加载中',
     })
     app._getNetWork({
       url: "apitest/getArticle",
       data: {
-        urls: this.data.urls
+        articleId: this.data.id
       },
       success: (resdata) => {
         wx.hideLoading()
         let res = resdata.data;
-        let bodyHtml = res.data.bodyHtml;
-        if(bodyHtml.length == 0){
-          wx.showToast({
-            title: '内容暂无法显示',
-            icon:'none',
-          })
-          wx.navigateBack({
-            delta: 1,
-          })
-          return
-        }
-        console.log(res.data.bodyHtml,'dddddddd')
         this.setData({
-          bodyHtml
+          info: res.data
         })
-        console.log(bodyHtml)
       },
       fail: function (res) {
         wx.hideLoading();
@@ -81,7 +70,7 @@ Page({
         console.log(res.data.data[0])
         this.setData({
           goodInfo: res.data.data[0],
-          bodyHtml:false
+          bodyHtml: false
         })
       },
       fail: function (res) {

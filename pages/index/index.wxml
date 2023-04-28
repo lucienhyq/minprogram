@@ -31,9 +31,9 @@
 
 <view class="initToBody">
   <view class="topTitle">篮球新闻</view>
-  <view class="lis" wx:for="{{newsList}}" data-url="{{item.link}}" wx:key="index" catchtap="toWebView">
-    <view class="img">
-      <image src="{{item.src}}" mode="" />
+  <view class="lis" style="flex-direction: column;" wx:for="{{newsList}}" data-news="news" data-item="{{item}}" wx:key="index" catchtap="toWebView">
+    <view class="imgNews">
+      <image src="{{item.poster}}" mode="widthFix" style="width: 100%;border-radius: 15rpx;" />
     </view>
     <view class="title">{{item.title}}</view>
   </view>
