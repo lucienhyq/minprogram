@@ -9,7 +9,9 @@
       </view>
       <view class="right">
         <view class="title">{{item.title}}</view>
-        <view class="contenCell">课程简介：{{item.conten}}</view>
+        <!-- <view class="contenCell">课程简介：
+          <rich-text nodes="{{item.conten}}"/>
+        </view> -->
         <view class="pirce">￥{{item.course_price}}</view>
       </view>
     </view>
