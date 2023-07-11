@@ -7,10 +7,14 @@
     <view class="title">{{goodInfo.title}}</view>
     <view class="price">￥{{goodInfo.course_price}}</view>
   </view>
+  <view class="richBox">
+    <view class="txt">商品描述</view>
+    <rich-text nodes="{{goodInfo.conten}}" />
+  </view>
 </block>
 <view wx:else style="padding-bottom: 100rpx;" class="newsBox">
   <view class="title">{{info.title}}</view>
-  <video src="{{info.videoSrc}}" wx:if="{{info.videoSrc}}" style="width: 100%;height: 500rpx;"/>
+  <video src="{{info.videoSrc}}" wx:if="{{info.videoSrc}}" style="width: 100%;height: 500rpx;" />
   <rich-text nodes="{{info.conten}}" />
 </view>
 

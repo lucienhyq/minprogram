@@ -76,7 +76,7 @@ App({
     let reject = _ObjData.reject;
     var success = _ObjData.success;
     var fail = _ObjData.fail;
-    // data.min = "1";
+    data.min = "wx";
     let headers = {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -160,9 +160,10 @@ App({
               }
             } else {
               wx.setStorageSync('uid', _data.data.id)
-              wx.navigateTo({
-                url: '/pages/index/index',
-              })
+              console.log('dsssssssssssssssss')
+              // wx.navigateTo({
+              //   url: '/pages/index/index',
+              // })
             }
           },
           fail: (err) => {

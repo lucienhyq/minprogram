@@ -20,3 +20,40 @@
   background-color: #ffffff;
   margin-bottom: 20rpx;
 }
+
+.richBox {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15rpx;
+  overflow: hidden;
+}
+.richBox rich-text{
+  overflow: hidden;
+}
+.richBox .txt {
+  font-size: 26rpx;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 25rpx;
+}
+
+.goodsTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20rpx 15rpx;
+}
+
+.goodsTitle .price {
+  color: red;
+  font-size: 32rpx;
+}
+
+.goodsTitle .title {
+  font-size: 36rpx;
+  margin-bottom: 15rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

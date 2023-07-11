@@ -8,7 +8,7 @@ Page({
   data: {
     id: null,
     bodyHtml: true,
-    news:false
+    news: false
   },
 
   /**
@@ -21,16 +21,17 @@ Page({
       })
     }
     if (options.news) {
+      wx.setNavigationBarTitle({
+        title: '新闻',
+      })
       this.setData({
-        news:true
+        news: true
       })
       this.getNews();
     } else {
       this.getData();
     }
-    wx.setNavigationBarTitle({
-      title: '新闻',
-    })
+
     console.log(this.data.id)
   },
   getNews() {
@@ -59,8 +60,8 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    app._getNetWork({
-      url: "apitest/getCourse",
+    app._postNetWork({
+      url: "courseList",
       data: {
         id: this.data.id
       },
@@ -71,6 +72,9 @@ Page({
         this.setData({
           goodInfo: res.data.data[0],
           bodyHtml: false
+        })
+        wx.setNavigationBarTitle({
+          title: this.data.goodInfo.title,
         })
       },
       fail: function (res) {
