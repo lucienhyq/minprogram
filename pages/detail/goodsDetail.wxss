@@ -27,9 +27,11 @@
   padding: 0 15rpx;
   overflow: hidden;
 }
-.richBox rich-text{
+
+.richBox rich-text {
   overflow: hidden;
 }
+
 .richBox .txt {
   font-size: 26rpx;
   color: #999999;
@@ -57,7 +59,8 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
-.bottomBox{
+
+.bottomBox {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -65,4 +68,14 @@
   background-color: #fff;
   box-sizing: border-box;
   z-index: 10;
+}
+
+.yz-g-detail .yz-content {
+  font-size: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.yz-g-detail .yz-content image {
+  max-width: 100%;
 }

@@ -32,6 +32,20 @@
             "enabled": true,
             "pages": []
           }
+        },
+        {
+          "name": "",
+          "pathName": "pages/detail/goodsDetail",
+          "query": "id=12",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/member/member_u",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

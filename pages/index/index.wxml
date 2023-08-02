@@ -41,3 +41,4 @@
   </view>
 </view>
 <!-- <rich-text nodes="{{bodyHtml}}"/> -->
+<miniTab></miniTab>

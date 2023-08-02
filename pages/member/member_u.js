@@ -1,4 +1,5 @@
 // pages/member/member_u.js
+const app = getApp();
 Page({
 
   /**
@@ -12,11 +13,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#FF8924',
+      animation: {
+        duration: 400,
+        timingFunc: 'easeIn'
+      }
+    })
     wx.setNavigationBarTitle({
       title: '会员页',
     })
+    this.getData();
   },
-  tologin(){
+  tologin() {
     wx.navigateTo({
       url: '/pages/login/login',
     })
@@ -68,5 +78,20 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getData() {
+    app._getNetWork({
+      url: "apitest/getMember",
+      success: (resdata) => {
+        let res = resdata.data;
+        this.setData({
+          memberInfo: res.data
+        })
+        console.log(this.data.memberInfo, 'dddddddd12121')
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
   }
 })

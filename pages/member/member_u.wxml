@@ -4,6 +4,12 @@
 </navigator>
 <text>欢迎</text> -->
 
-<view class="userBox" catchtap="tologin">
-  授权登录
+<view class="memberTop">
+  <view class="img">
+    <image src="{{memberInfo.avatar}}" mode="" wx:if="{{memberInfo.avatar}}" />
+    <icon class="iconfont icon-lanqiu" wx:else></icon>
+  </view>
+  <view class="name" catchtap="tologin">{{memberInfo.user_name ? memberInfo.user_name :'点击登录'}}</view>
 </view>
+
+<miniTab></miniTab>

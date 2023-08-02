@@ -7,21 +7,8 @@
     "pages/webView/webView",
     "pages/detail/goodsDetail"
   ],
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#000000",
-    "backgroundColor": "#fff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "./image/home.png",
-      "selectedIconPath": "./image/home.png"
-    }, {
-      "pagePath": "pages/member/member_u",
-      "text": "会员中心",
-      "iconPath": "./image/my.png",
-      "selectedIconPath": "./image/my.png"
-    }]
+  "usingComponents": {
+    "miniTab":"./mycomponent/foot/foot"
   },
   "window": {
     "backgroundTextStyle": "light",

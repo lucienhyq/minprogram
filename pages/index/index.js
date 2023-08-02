@@ -26,16 +26,15 @@ Page({
     }
     this.getNews();
     wx.setNavigationBarTitle({
-      title: '篮球新闻',
+      title: '首页',
     })
   },
   onShareAppMessage: function (e) {
     return {
-      title: '篮球新闻'
+      title: ''
     }
   },
   toDetail(e) {
-    console.log(e)
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/detail/goodsDetail?id=' + id,
