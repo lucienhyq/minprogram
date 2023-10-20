@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log(app.data.host)
   },
   getUserProfileTap(e) {
     console.log(e)
@@ -38,13 +38,13 @@ Page({
       }
     });
   },
-  loginbtn(_info){
+  loginbtn(_info) {
     wx.login({
       success: (_json) => {
-        console.log(_json,_info)
+        console.log(_json, _info)
         wx.request({
-          // url: 'http://localhost:3000/apitest/wxMiniLogin',
-          url: 'https://lucien.freehk.svipss.top/apitest/wxMiniLogin',
+          url: 'http://localhost:3000/apitest/wxMiniLogin',
+          // url: 'https://lucien.freehk.svipss.top/apitest/wxMiniLogin',
           header: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -53,19 +53,20 @@ Page({
             code: _json.code,
             info: _info,
           },
-          success: (res)=> {
+          success: (res) => {
             console.log(res)
             let resData = res.data;
             wx.setStorageSync('uid', resData.data.id)
+            wx.setStorageSync('sessionID', resData.sessionID)
             wx.redirectTo({
               url: '/pages/index/index',
             })
           },
-          fail:(err)=>{
+          fail: (err) => {
             console.log(err)
           }
         })
-      },
+      }
     })
   },
   /**

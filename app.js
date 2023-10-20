@@ -1,5 +1,5 @@
 // app.js
-const host = "http://localhost:3000/"
+// const host = "http://localhost:3000/"
 // const host = "https://lucien.freehk.svipss.top/"
 App({
   onLaunch() {
@@ -25,6 +25,7 @@ App({
   data: {
     login_type: 1, //1无请求，2正在请求 状态锁
     login_fun_list: [], // 需要登录后再请求的接口队列
+    host: "http://localhost:3000/"
   },
   onShow(options) {
     this.data.login_type = 1;
@@ -42,7 +43,7 @@ App({
    * complete 结束的回调函数（调用成功、失败都会执行）
    */
   _getNetWork: function (_ObjData) {
-    console.log('dddddddddddd',this.data.login_type)
+    console.log('dddddddddddd', this.data.login_type)
     return this._Request(_ObjData, 'GET');
   },
   /**
@@ -91,10 +92,14 @@ App({
       );
       url += "&" + paramsArray.join("&");
     }
+    let sessionID = wx.getStorageSync('sessionID');
+    if(sessionID){
+      url += '&sessionId='+sessionID
+    }
     console.log(url)
     this.data.login_type = 2;
     wx.request({
-      url: host + url,
+      url: this.data.host + url,
       method: method,
       data: data,
       header: headers,
@@ -114,6 +119,8 @@ App({
             this.toRequestNetWork(obj);
             // console.log(obj,"-------------------------------------------------success")
           }
+        }else{
+
         }
 
       },
@@ -150,9 +157,10 @@ App({
             console.log(res)
             this.data.login_type = 1;
             var _data = res.data;
-            console.log(_data.result,ObjData.method)
+            console.log(_data.result, ObjData.method)
             if (_data.result == 1) {
               console.log("登录后", ObjData);
+              wx.setStorageSync('sessionID', _data.sessionID)
               if (ObjData.method == 'POST') {
                 that._postNetWork(ObjData);
               } else {
@@ -161,9 +169,9 @@ App({
             } else {
               wx.setStorageSync('uid', _data.data.id)
               console.log('dsssssssssssssssss')
-              // wx.navigateTo({
-              //   url: '/pages/index/index',
-              // })
+              wx.navigateTo({
+                url: '/pages/login/login',
+              })
             }
           },
           fail: (err) => {
