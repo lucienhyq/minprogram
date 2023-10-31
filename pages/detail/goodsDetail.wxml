@@ -1,8 +1,8 @@
 <!--pages/detail/goodsDetail.wxml-->
 <view style="width: 100%;box-sizing: border-box;">
   <block wx:if="{{!news}}">
-    <view class="bannerTop" style="width:100%;">
-      <image style="width:100%;" src="{{goodInfo.goodimg}}" mode="widthFix" alt="" />
+    <view class="bannerTop">
+      <image src="{{goodInfo.goodimg}}" mode="widthFix" alt="" />
     </view>
     <view class="goodsTitle">
       <view class="title">{{goodInfo.title}}</view>
@@ -25,8 +25,8 @@
   <view class="bottomBox">
     <block wx:if="{{!news}}">
       <van-goods-action>
-        <van-goods-action-icon icon="chat-o" text="客服" bind:click="onClickIcon" />
-        <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+        <van-goods-action-icon open-type="contact" icon="chat-o" text="客服" bind:click="onClickIcon" />
+        <van-goods-action-button text="{{goodInfo.goodStatus == '2'?'预约':'立即购买'}}" bind:click="onClickButton" />
       </van-goods-action>
     </block>
 

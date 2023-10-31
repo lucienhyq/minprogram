@@ -12,11 +12,12 @@
         <!-- <view class="contenCell">课程简介：
           <rich-text nodes="{{item.conten}}"/>
         </view> -->
+        <view class="goodsType">{{item.goodStatus == '2'?"预约商品":"平台商品"}}</view>
         <view class="pirce">￥{{item.course_price}}</view>
       </view>
     </view>
   </view>
-  <view class="gym">
+  <view class="gym" wx:if="{{referee}}">
     <view class="topTitle">裁判</view>
     <view class="gymBox" wx:for="{{referee}}" wx:key="index">
       <view class="left">

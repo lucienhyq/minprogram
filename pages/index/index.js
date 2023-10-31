@@ -25,6 +25,7 @@ Page({
       })
     }
     this.getNews();
+    this.getCourseList();
     wx.setNavigationBarTitle({
       title: '首页',
     })
@@ -71,6 +72,23 @@ Page({
           course: res.data.course,
           referee: res.data.referee
         })
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        console.log(res);
+      }
+    });
+  },
+  getCourseList() {
+    app._postNetWork({
+      url: "courseList",
+      success: (resdata) => {
+        wx.hideLoading()
+        let res = resdata.data;
+        this.setData({
+          course: res.data.list
+        })
+        console.log(res)
       },
       fail: function (res) {
         wx.hideLoading();

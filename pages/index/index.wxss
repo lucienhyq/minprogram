@@ -45,9 +45,11 @@
 }
 
 .gymBox .right .title {
-  font-size: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
 }
-.gymBox .pirce{
+
+.gymBox .pirce {
   font-size: 24rpx;
   color: red;
 }
@@ -93,7 +95,8 @@
   border-radius: 10rpx;
   margin-right: 20rpx;
 }
-.lis .imgNews{
+
+.lis .imgNews {
   flex: 1;
 }
 
@@ -105,4 +108,9 @@
 
 .bannerImg {
   width: 100%;
+}
+
+.goodsType {
+  font-size: 24rpx;
+  text-align: left;
 }

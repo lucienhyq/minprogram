@@ -63,16 +63,16 @@ Page({
     app._postNetWork({
       url: "courseList",
       data: {
-        id: this.data.id
+        id: this.options.id
       },
       success: (resdata) => {
         wx.hideLoading()
         let res = resdata.data;
-        console.log(res.data.data[0])
         this.setData({
-          goodInfo: res.data.data[0],
+          goodInfo: res.data.list[0],
           bodyHtml: false
         })
+        console.log(res.data.list[0].goodStatus)
         wx.setNavigationBarTitle({
           title: this.data.goodInfo.title,
         })

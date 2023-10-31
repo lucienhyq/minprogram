@@ -93,8 +93,12 @@ App({
       url += "&" + paramsArray.join("&");
     }
     let sessionID = wx.getStorageSync('sessionID');
-    if(sessionID){
-      url += '&sessionId='+sessionID
+    if (sessionID) {
+      if (method === 'GET') {
+        url += '&sessionId=' + sessionID
+      } else {
+        data.sessionId = sessionID
+      }
     }
     console.log(url)
     this.data.login_type = 2;
@@ -119,7 +123,7 @@ App({
             this.toRequestNetWork(obj);
             // console.log(obj,"-------------------------------------------------success")
           }
-        }else{
+        } else {
 
         }
 
@@ -152,6 +156,7 @@ App({
           },
           data: {
             code: _json.code,
+            min: "wx"
           },
           success: (res) => {
             console.log(res)

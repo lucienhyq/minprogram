@@ -79,3 +79,14 @@
 .yz-g-detail .yz-content image {
   max-width: 100%;
 }
+
+.bannerTop {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.bannerTop image{
+  width: 100%;
+  border-radius: 15rpx;
+}

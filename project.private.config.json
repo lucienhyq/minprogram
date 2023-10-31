@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/detail/goodsDetail",
+          "query": "id=18",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/login/login",
           "query": "",
           "launchMode": "default",
