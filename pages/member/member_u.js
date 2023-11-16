@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    active:'0'
   },
 
   /**
@@ -25,6 +25,7 @@ Page({
       title: '会员页',
     })
     this.getData();
+    this.getMember();
   },
   tologin() {
     wx.navigateTo({
@@ -78,6 +79,20 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getMember() {
+    app._postNetWork({
+      url: "orderCountList",
+      success: (resdata) => {
+        let res = resdata.data;
+        this.setData({
+          orderList : res.data
+        })
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
   },
   getData() {
     app._getNetWork({

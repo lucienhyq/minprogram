@@ -3,13 +3,33 @@
   <text>登录</text>
 </navigator>
 <text>欢迎</text> -->
-
-<view class="memberTop">
-  <view class="img">
-    <image src="{{memberInfo.avatar}}" mode="" wx:if="{{memberInfo.avatar}}" />
-    <icon class="iconfont icon-lanqiu" wx:else></icon>
+<view class="memberBox">
+  <view class="memberTop">
+    <view class="img">
+      <image src="{{memberInfo.avatar}}" mode="" wx:if="{{memberInfo.avatar}}" />
+      <icon class="iconfont icon-lanqiu" wx:else></icon>
+    </view>
+    <view class="name" catchtap="tologin">{{memberInfo.user_name ? memberInfo.user_name :'点击登录'}}</view>
   </view>
-  <view class="name" catchtap="tologin">{{memberInfo.user_name ? memberInfo.user_name :'点击登录'}}</view>
-</view>
 
-<miniTab></miniTab>
+  <view class="contenBox">
+    <van-tabs show="{{active}}" sticky>
+      <van-tab title="全部订单">
+        <view class="list">
+          <view class="listBox" wx:for="{{orderList}}" wx:key="index">
+            <view class="img">
+              <image src="{{item.goodImg}}" mode="" />
+            </view>
+            <view class="list_r">
+              <view class="title">{{item.goodTitle}}</view>
+              <view class="orderSn">{{item.orderSn}}</view>
+              <view class="create_time">订单时间：{{item.create_time}}</view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+  <miniTab></miniTab>
+</view>

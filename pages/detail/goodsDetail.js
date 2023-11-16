@@ -34,6 +34,30 @@ Page({
 
     console.log(this.data.id)
   },
+  onClickButton() {
+    app._postNetWork({
+      url: "courseCreate",
+      data: {
+        id: this.data.id
+      },
+      success: (resdata) => {
+        wx.hideLoading()
+        let res = resdata.data;
+        wx.showToast({
+          duration:1000,
+          icon:'none',
+          title: res.msg,
+        })
+        wx.redirectTo({
+          url: '/pages/index/index',
+        })
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        console.log(res);
+      }
+    });
+  },
   getNews() {
     wx.showLoading({
       title: '加载中',

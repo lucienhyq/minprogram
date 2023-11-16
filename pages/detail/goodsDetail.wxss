@@ -1,4 +1,10 @@
 /* pages/detail/goodsDetail.wxss */
+.goodsDetail {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 200rpx;
+}
+
 .contenBox {
   width: 100%;
   padding: 0 20rpx;
@@ -86,7 +92,8 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-.bannerTop image{
+
+.bannerTop image {
   width: 100%;
   border-radius: 15rpx;
 }

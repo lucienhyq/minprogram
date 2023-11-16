@@ -25,7 +25,7 @@ App({
   data: {
     login_type: 1, //1无请求，2正在请求 状态锁
     login_fun_list: [], // 需要登录后再请求的接口队列
-    host: "http://localhost:3000/"
+    host: "https://192.168.0.143/"
   },
   onShow(options) {
     this.data.login_type = 1;
@@ -148,7 +148,7 @@ App({
     wx.login({
       success: (_json) => {
         wx.request({
-          url: 'http://localhost:3000/apitest/wxMiniLogin',
+          url: 'https://192.168.0.143/apitest/wxMiniLogin',
           method: requestType,
           header: {
             'Content-Type': 'application/json',

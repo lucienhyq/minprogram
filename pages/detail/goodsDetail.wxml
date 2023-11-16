@@ -1,5 +1,5 @@
 <!--pages/detail/goodsDetail.wxml-->
-<view style="width: 100%;box-sizing: border-box;">
+<view class="goodsDetail">
   <block wx:if="{{!news}}">
     <view class="bannerTop">
       <image src="{{goodInfo.goodimg}}" mode="widthFix" alt="" />
