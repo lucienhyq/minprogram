@@ -26,6 +26,7 @@ Page({
     }
     this.getNews();
     this.getCourseList();
+    this.getHomemakingList();
     wx.setNavigationBarTitle({
       title: '首页',
     })
@@ -89,6 +90,28 @@ Page({
           course: res.data.list
         })
         console.log(res)
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        console.log(res);
+      }
+    });
+  },
+  toHomemaking(e) {
+    let {
+      id
+    } = e.currentTarget.dataset;
+    
+  },
+  getHomemakingList(e) {
+    app._postNetWork({
+      url: "apitest/homeMaking_list",
+      success: (resdata) => {
+        wx.hideLoading()
+        let res = resdata.data;
+        this.setData({
+          homemaking: res.data
+        })
       },
       fail: function (res) {
         wx.hideLoading();

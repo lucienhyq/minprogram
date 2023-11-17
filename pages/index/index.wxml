@@ -1,6 +1,22 @@
 <!--index.wxml-->
 <view class="container">
   <image class="bannerImg" src="http://localhost:3000/uploads/1c1aac37ba7728703da738ddc1b3e701.jpg" mode="widthFix" />
+
+  <view class="gym">
+    <view class="topTitle">家政服务</view>
+    <view class="gymBox" wx:for="{{homemaking}}" wx:key="index" catchtap="toHomemaking" data-id="{{item.hmuid}}">
+      <view class="left">
+        <image src="{{item.avatar}}" mode="" />
+      </view>
+      <view class="right" style="justify-content: space-around;">
+        <view class="title">{{item.realname}}</view>
+        <view class="goodsType">工作时间：{{item.workTime.workeStartTime}} -- {{item.workTime.workeEndTime}}</view>
+        <view class="pirce">￥{{item.workTime.price}}/小时</view>
+        <view class="goodsType">介绍人:{{item.creatUid.user_name}}</view>
+      </view>
+    </view>
+  </view>
+
   <view class="gym">
     <view class="topTitle">推荐</view>
     <view class="gymBox" wx:for="{{course}}" wx:key="index" catchtap="toDetail" data-id="{{item.id}}">
