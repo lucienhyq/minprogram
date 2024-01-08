@@ -1,0 +1,47 @@
+/* pages/bils/bilsHome/bilsHome.wxss */
+.topbox {
+  height: 375rpx;
+  background: linear-gradient(180deg, #FF8924 0%, #F5F5F5 100%);
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.topbox .tab {
+  display: flex;
+  background-color: #F5F5F5;
+  border-radius: 15rpx;
+}
+
+.topbox .tab .ytxt {
+  font-size: 28rpx;
+  padding: 5rpx 15rpx;
+}
+
+.tap {
+  background-color: #FF8710;
+  border-radius: 15rpx;
+  color: #fff;
+}
+.topbox .txt{
+  margin-top: 52rpx;
+  width: 100%;
+  text-align: center;
+}
+.topbox .total {
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  font-size: 62rpx;
+  color: #7F3A15;
+  font-weight: bold;
+}
+.list{
+  margin: 0 30rpx;
+}
+.list .line {
+  display: flex;
+  justify-content: space-between;
+}

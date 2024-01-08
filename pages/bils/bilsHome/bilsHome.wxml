@@ -1,0 +1,21 @@
+<!--pages/bils/bilsHome/bilsHome.wxml-->
+<view class="bilsHome">
+  <view class="topbox">
+    <view class="tab">
+      <view class="ytxt {{ tap == '1'?'tap':'' }}" catch:tap="tapSelect" data-key="1">收入</view>
+      <view class="ytxt {{ tap == '2'?'tap':'' }}" catch:tap="tapSelect" data-key="2">支出</view>
+    </view>
+    <view class="txt">存款</view>
+    <view class="total">￥100.00</view>
+  </view>
+  <view class="list">
+    <view class="line">
+      <view class="left">ID:1</view>
+      <view class="right">+10.00</view>
+    </view>
+    <view class="line">
+      <view class="left">2024-1-8 17:59</view>
+      <view class="right">收入</view>
+    </view>
+  </view>
+</view>

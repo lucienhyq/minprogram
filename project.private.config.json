@@ -10,6 +10,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/bils/bilsHome/bilsHome",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/detail/goodsDetail",
           "query": "id=17",
           "launchMode": "default",

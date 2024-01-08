@@ -107,3 +107,24 @@
 .contenBox .list {
   padding-top: 20rpx;
 }
+.other{
+  padding: 15rpx 0;
+  display: flex;
+  background-color: #fff;
+  margin: 0 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 22rpx;
+}
+.other .orther_plug{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.other .orther_plug .iconfont{
+  font-size: 60rpx;
+}
+.other .orther_plug .txt{
+  font-size: 28rpx;
+}

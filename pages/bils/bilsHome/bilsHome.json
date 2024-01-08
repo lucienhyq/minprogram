@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "快捷记账",
+  "usingComponents": {
+    "van-tabs":"/dist/tabs/index",
+    "van-tab":"/dist/tab/index"
+  }
+}

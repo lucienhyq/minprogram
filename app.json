@@ -5,10 +5,11 @@
     "pages/logs/logs",
     "pages/login/login",
     "pages/webView/webView",
-    "pages/detail/goodsDetail"
+    "pages/detail/goodsDetail",
+    "pages/bils/bilsHome/bilsHome"
   ],
   "usingComponents": {
-    "miniTab":"./mycomponent/foot/foot"
+    "miniTab": "./mycomponent/foot/foot"
   },
   "window": {
     "backgroundTextStyle": "light",

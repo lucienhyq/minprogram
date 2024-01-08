@@ -13,6 +13,12 @@
   </view>
 
   <view class="contenBox">
+    <view class="other">
+      <view class="orther_plug">
+        <i class="iconfont icon-zhangben"></i>
+        <view class="txt">账本</view>
+      </view>
+    </view>
     <van-tabs show="{{active}}" sticky>
       <van-tab title="全部订单">
         <view class="list">
