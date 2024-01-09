@@ -1,11 +1,13 @@
 // pages/bils/bilsHome/bilsHome.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tap: '1'
+    tap: '1',
+    popupShow: false
   },
 
   /**
@@ -33,9 +35,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    this.getData();
 
   },
-
+  tapBtn() {
+    this.setData({
+      popupShow: true
+    })
+  },
+  closePopup() {
+    this.setData({
+      popupShow: false
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -77,5 +89,19 @@ Page({
     this.setData({
       tap: key
     })
+  },
+  getData() {
+    app._postNetWork({
+      url: "apitest/Bills_index",
+      success: (resdata) => {
+        let res = resdata.data;
+        this.setData({
+          info: res.data
+        })
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    });
   }
 })

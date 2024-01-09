@@ -2,6 +2,8 @@
   "navigationBarTitleText": "快捷记账",
   "usingComponents": {
     "van-tabs":"/dist/tabs/index",
-    "van-tab":"/dist/tab/index"
+    "van-tab":"/dist/tab/index",
+    "van-empty":"/dist/empty/index",
+    "billsPopup":"../../../mycomponent/billsPopup/billsPopup"
   }
 }

@@ -6,16 +6,28 @@
       <view class="ytxt {{ tap == '2'?'tap':'' }}" catch:tap="tapSelect" data-key="2">支出</view>
     </view>
     <view class="txt">存款</view>
-    <view class="total">￥100.00</view>
+    <view class="total">￥{{info.totalMoney}}</view>
   </view>
-  <view class="list">
-    <view class="line">
-      <view class="left">ID:1</view>
-      <view class="right">+10.00</view>
+  <view class="detailBox">
+    <view class="detail">支出总额：￥{{info.expensePrice}},收入总额：￥{{info.incomePrice}}</view>
+  </view>
+  <view class="listBox">
+    <view class="list" wx:for="{{info.list}}" wx:key="index" wx:if="{{info.list.length > 0}}">
+      <view class="line">
+        <view class="left_id">ID:1</view>
+        <view class="right_price">+10.00</view>
+      </view>
+      <view class="line">
+        <view class="left_time">2024-1-8 17:59</view>
+        <view class="right_type">类型:收入</view>
+      </view>
     </view>
-    <view class="line">
-      <view class="left">2024-1-8 17:59</view>
-      <view class="right">收入</view>
-    </view>
+    <van-empty image="search" description="暂无记录" wx:if="{{info.list.length == 0}}" />
   </view>
 </view>
+
+<view class="btn" catch:tap="tapBtn">
+  <icon class="iconfont icon-zhangben"></icon>
+  <text class="txt">记一笔</text>
+</view>
+<billsPopup show="{{popupShow}}" bind:close="closePopup"></billsPopup>

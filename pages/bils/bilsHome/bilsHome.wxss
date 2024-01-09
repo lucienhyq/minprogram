@@ -25,11 +25,13 @@
   border-radius: 15rpx;
   color: #fff;
 }
-.topbox .txt{
+
+.topbox .txt {
   margin-top: 52rpx;
   width: 100%;
   text-align: center;
 }
+
 .topbox .total {
   width: 100%;
   flex: 1;
@@ -38,10 +40,77 @@
   color: #7F3A15;
   font-weight: bold;
 }
-.list{
+.listBox{
   margin: 0 30rpx;
+  padding-bottom: 150rpx;
 }
+.list {
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  padding: 28rpx 20rpx;
+  /* border-bottom: 1rpx solid #f5f5f5; */
+  margin-bottom: 20rpx;
+}
+.listBox .list:last-child{
+  border-bottom: none;
+}
+
 .list .line {
   display: flex;
   justify-content: space-between;
+  line-height: 32rpx;
+}
+
+.list .line:last-child {
+  margin-top: 20rpx;
+}
+
+.list .line .left_id {
+  font-size: 28rpx;
+}
+
+.list .line .right_price {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.list .line .left_time {
+  font-size: 24rpx;
+  color: #AAAAB3;
+}
+
+.list .line .right_type {
+  font-size: 28rpx;
+  color: #AAAAB3;
+}
+
+.detailBox {
+  margin: 30rpx 30rpx;
+  margin-top: -100rpx;
+}
+
+.detailBox .detail {
+  font-size: 26rpx;
+  color: #FF8710;
+}
+.btn{
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 40rpx;
+  bottom: 200rpx;
+  background-color: #FF8710;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn .iconfont{
+  font-size: 60rpx;
+  color: #F5F5F5 ;
+}
+.btn .txt{
+  font-size: 22rpx;
+  color: #F5F5F5;
 }

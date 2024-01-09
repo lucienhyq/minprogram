@@ -1,0 +1,22 @@
+<!--mycomponent/billsPopup/billsPopup.wxml-->
+<van-popup show="{{ show }}" position="bottom" round closeable custom-style="height: 70%;" bind:close="onClose">
+  <view class="popBox">
+    <view class="headTitl">快捷记账</view>
+    <view class="line">
+      <view class="left">记账类型:</view>
+      <view class="right">
+        <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+          <van-radio name="income" icon-size="16px" checked-color="#07c160">收入</van-radio>
+          <van-radio name="expense" icon-size="16px" checked-color="#07c160">支出</van-radio>
+        </van-radio-group>
+      </view>
+    </view>
+    <view class="line">
+      <view class="left">{{radio == 'income'?'收入金额':'支出金额'}}:</view>
+      <view class="right">
+        <input type="text" auto-focus="{{true}}" placeholder="0.00" />
+      </view>
+    </view>
+
+  </view>
+</van-popup>
