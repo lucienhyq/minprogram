@@ -17,6 +17,11 @@
         <input type="text" auto-focus="{{true}}" placeholder="0.00" />
       </view>
     </view>
-
+    <view class="line">
+      <view class="left">消费标签:</view>
+      <view class="right">
+        
+      </view>
+    </view>
   </view>
 </van-popup>
