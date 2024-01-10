@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active:'0'
+    active: '0'
   },
 
   /**
@@ -30,6 +30,15 @@ Page({
   tologin() {
     wx.navigateTo({
       url: '/pages/login/login',
+    })
+  },
+  toUrl(e) {
+    console.log(e)
+    let {
+      url
+    } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/${url}`,
     })
   },
   /**
@@ -86,7 +95,7 @@ Page({
       success: (resdata) => {
         let res = resdata.data;
         this.setData({
-          orderList : res.data
+          orderList: res.data
         })
       },
       fail: function (res) {

@@ -20,7 +20,7 @@
       </view>
       <view class="line">
         <view class="left_time">{{utils.dateFormat(item.created)}}</view>
-        <view class="right_type">类型:{{item.type_us == 'expense'?'支出':'收入'}}</view>
+        <view class="right_type">{{item.type_us == 'expense'?'支出标签':'收入标签'}}:{{item.noteType}}</view>
       </view>
     </view>
     <van-empty image="search" description="暂无记录" wx:if="{{info.list.data.length == 0}}" />

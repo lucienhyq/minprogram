@@ -14,7 +14,7 @@
 
   <view class="contenBox">
     <view class="other">
-      <view class="orther_plug">
+      <view class="orther_plug" catch:tap="toUrl" data-url="pages/bils/bilsHome/bilsHome">
         <i class="iconfont icon-zhangben"></i>
         <view class="txt">账本</view>
       </view>
