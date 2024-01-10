@@ -13,7 +13,7 @@
     <view class="detail">支出总额：￥{{info.expensePrice}},收入总额：￥{{info.incomePrice}}</view>
   </view>
   <view class="listBox">
-    <view class="list" wx:for="{{info.list}}" wx:key="index" wx:if="{{info.list.length > 0}}">
+    <view class="list" wx:for="{{info.list.data}}" wx:key="index" wx:if="{{info.list.data.length > 0}}">
       <view class="line">
         <view class="left_id">ID:{{item.id}}</view>
         <view class="right_price">{{item.type_us == 'expense'?'-':'+'}}{{item.amount}}</view>
@@ -23,7 +23,7 @@
         <view class="right_type">类型:{{item.type_us == 'expense'?'支出':'收入'}}</view>
       </view>
     </view>
-    <van-empty image="search" description="暂无记录" wx:if="{{info.list.length == 0}}" />
+    <van-empty image="search" description="暂无记录" wx:if="{{info.list.data.length == 0}}" />
   </view>
 </view>
 
