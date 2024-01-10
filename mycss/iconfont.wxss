@@ -6,6 +6,70 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-gongzi:before {
+  content: "\e60c";
+}
+
+.icon-qita:before {
+  content: "\e64b";
+}
+
+.icon-gongjiao:before {
+  content: "\e601";
+}
+
+.icon-yundong:before {
+  content: "\e807";
+}
+
+.icon-24huafei:before {
+  content: "\e66f";
+}
+
+.icon-shouye:before {
+  content: "\e63a";
+}
+
+.icon-tubiao22:before {
+  content: "\e65e";
+}
+
+.icon-yule:before {
+  content: "\e639";
+}
+
+.icon-zhufang:before {
+  content: "\e63c";
+}
+
+.icon-lvyou:before {
+  content: "\e623";
+}
+
+.icon-meirong-heicopy:before {
+  content: "\e62c";
+}
+
+.icon-canyin:before {
+  content: "\e8a4";
+}
+
+.icon-aircooking-i:before {
+  content: "\e64a";
+}
+
+.icon-shenghuoyongpin:before {
+  content: "\e60e";
+}
+
+.icon-xuexi:before {
+  content: "\e607";
+}
+
+.icon-zhangben:before {
+  content: "\e614";
+}
+
 .icon-lanqiu:before {
   content: "\e63b";
 }
@@ -56,8 +120,4 @@
 
 .icon-sousou:before {
   content: "\e821";
-}
-
-.icon-zhangben:before {
-  content: "\e614";
 }

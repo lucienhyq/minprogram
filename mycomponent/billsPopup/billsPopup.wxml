@@ -1,5 +1,6 @@
 <!--mycomponent/billsPopup/billsPopup.wxml-->
-<van-popup show="{{ show }}" position="bottom" round closeable custom-style="height: 70%;" bind:close="onClose">
+<wxs src="/utils/utils.wxs" module="tool"/>
+<van-popup show="{{ show }}" position="bottom" round closeable custom-style="height: 85%;" bind:close="onClose" close-on-click-overlay="{{false}}">
   <view class="popBox">
     <view class="headTitl">快捷记账</view>
     <view class="line">
@@ -14,14 +15,26 @@
     <view class="line">
       <view class="left">{{radio == 'income'?'收入金额':'支出金额'}}:</view>
       <view class="right">
-        <input type="text" auto-focus="{{true}}" placeholder="0.00" />
+        <input type="digit" model:value="{{amount}}" auto-focus="{{true}}" placeholder="0.00" />
       </view>
     </view>
-    <view class="line">
-      <view class="left">消费标签:</view>
-      <view class="right">
-        
+    <view class="line" style="align-items: flex-start;">
+      <view class="left">{{radio == 'income'?'收入':'支出'}}标签:</view>
+      <view class="right" style="flex-wrap:wrap;justify-content: flex-start;">
+        <view class="iconbox {{selectInd == item.id ? 'select' :''}}" wx:for="{{billsTag}}" wx:key="index" catch:tap="tapSelectId" data-id="{{item.id}}">
+          <icon class="iconfont {{item.class}}"></icon>
+          <view class="txt">{{item.name}}</view>
+        </view>
       </view>
+    </view>
+    <view class="line" style="align-items: flex-start;">
+      <view class="left">{{radio == 'income'?'收入':'支出'}}备注：</view>
+      <view class="right">
+        <textarea model:value="{{note}}" auto-height placeholder="{{radio == 'income'?'收入备注':'支出备注'}}" />
+      </view>
+    </view>
+    <view class="btn" catch:tap="countPost">
+      确认
     </view>
   </view>
 </van-popup>

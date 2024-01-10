@@ -90,6 +90,12 @@ Page({
       tap: key
     })
   },
+  confirm(){
+    this.setData({
+      popupShow:false
+    })
+    this.getData();
+  },
   getData() {
     app._postNetWork({
       url: "apitest/Bills_index",

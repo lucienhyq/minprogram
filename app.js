@@ -124,7 +124,17 @@ App({
             // console.log(obj,"-------------------------------------------------success")
           }
         } else {
-
+          this.data.login_type = 1;
+          if (fail && typeof fail === "function") {
+            fail();
+          }
+          reject();
+          wx.showToast({
+            title: "数据获取失败！",
+            icon: "loading",
+            duration: 2000,
+          });
+          console.log("数据获取失败:", url, res);
         }
 
       },

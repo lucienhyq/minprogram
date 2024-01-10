@@ -91,7 +91,7 @@
 
 .detailBox .detail {
   font-size: 26rpx;
-  color: #FF8710;
+  color: #999;
 }
 .btn{
   width: 125rpx;
