@@ -52,6 +52,7 @@ Page({
           data: {
             code: _json.code,
             info: _info,
+            min: 'wx'
           },
           success: (res) => {
             console.log(res)

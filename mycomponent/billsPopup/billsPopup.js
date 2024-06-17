@@ -94,10 +94,10 @@ Component({
         id: 0
       },
     ],
-    note:'',
-    amount:''
+    note: '',
+    amount: ''
   },
-  
+
   pageLifetimes: {
     show: function () {
       this.setData({
@@ -123,6 +123,7 @@ Component({
     onChange(event) {
       this.setData({
         radio: event.detail,
+        amount: ''
       });
     },
     tapSelectId(e) {
