@@ -1,5 +1,5 @@
 // app.js
-const host = "http://localhost:3000/"
+const host = "http://192.168.0.144:3000/"
 // const host = "https://lucien.freehk.svipss.top/"
 App({
   onLaunch() {
