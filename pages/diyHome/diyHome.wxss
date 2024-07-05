@@ -25,9 +25,10 @@
   font-weight: 600;
 }
 
-.headTitle .small {
+.small {
   color: #999;
   font-size: 24rpx;
+  text-align: center;
 }
 
 .gridChild {
@@ -40,8 +41,73 @@
 .gridChild .iconfont {
   font-size: 60rpx;
   color: #fe1345;
+  margin-bottom: 10rpx;
 }
 
 .gridChild text {
   font-size: 24rpx;
+}
+
+.company {
+  margin: 50rpx 20rpx;
+}
+
+.company .title {
+  font-size: 36rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.development_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.development_lis {
+  width: 48%;
+  height: 200rpx;
+  box-shadow: 0px 2px 10px #ababab;
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 25rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8rpx;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.development_lis .icon-jiangpai {
+  position: absolute;
+  left: 35rpx;
+  top: 0;
+  color: #1afa29;
+  font-size: 55rpx;
+}
+
+.dateYear {
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+
+.desc {
+  font-size: 24rpx;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bgH {
+  padding-bottom: 200rpx;
 }

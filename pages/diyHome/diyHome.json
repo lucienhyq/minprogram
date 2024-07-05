@@ -3,6 +3,7 @@
   "usingComponents": {
     "topBackground":"/mycomponent/topBackground/topBackground",
     "van-grid":"/dist/grid/index",
-    "van-grid-item":"/dist/grid-item/index"
+    "van-grid-item":"/dist/grid-item/index",
+    "mp-html":"/mycomponent/mp-html/index"
   }
 }

@@ -1,19 +1,43 @@
 <!--pages/diyHome/diyHome.wxml-->
-<topBackground></topBackground>
-<view class="businessBox m_t">
-  <view class="headTitle">
-    <text class="title">核心业务</text>
-    <text class="small">MAIN BUSINESS</text>
+<view class="bgH">
+  <topBackground></topBackground>
+  <view class="businessBox m_t">
+    <view class="headTitle">
+      <text class="title">核心业务</text>
+      <text class="small">MAIN BUSINESS</text>
+    </view>
+    <view class="gridBox">
+      <van-grid>
+        <van-grid-item use-slot wx:for="{{business}}" wx:key="index">
+          <view slot="" class="gridChild">
+            <icon class="iconfont {{item.icon}}" />
+            <text>{{item.text}}</text>
+          </view>
+        </van-grid-item>
+      </van-grid>
+    </view>
   </view>
-  <view class="gridBox">
-    <van-grid>
-      <van-grid-item use-slot wx:for="{{business}}" wx:key="index">
-        <view slot="" class="gridChild">
-          <icon class="iconfont {{item.icon}}" />
-          <text>{{item.text}}</text>
-        </view>
-      </van-grid-item>
-    </van-grid>
+  <view class="company">
+    <view class="company_title">
+      <view class="title">公司简介</view>
+      <view class="small">COMPANY PROFILE</view>
+    </view>
+    <view class="company_conten">
+      <mp-html content="{{content}}"></mp-html>
+    </view>
+  </view>
+  <view class="company">
+    <view class="company_title" style="margin-bottom:20rpx;">
+      <view class="title">发展历程</view>
+      <view class="small">DEVELOPMENT PATH</view>
+    </view>
+    <view class="development_box">
+      <view class="development_lis" wx:for="{{development_history}}">
+        <icon class="iconfont icon-jiangpai" />
+        <view class="dateYear">{{item.date}}年</view>
+        <view class="desc">{{item.desc}}</view>
+      </view>
+    </view>
   </view>
 </view>
 

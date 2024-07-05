@@ -73,7 +73,8 @@ Page({
     console.log(data)
     if (data.result) {
       this.setData({
-        business: data.data.business
+        business: data.data.business,
+        development_history: data.data.development_history
       })
     } else {
       wx.showToast({
