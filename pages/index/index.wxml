@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <image class="bannerImg" src="http://localhost:3000/uploads/1c1aac37ba7728703da738ddc1b3e701.jpg" mode="widthFix" />
 
   <view class="gym">
@@ -25,9 +25,6 @@
       </view>
       <view class="right">
         <view class="title">{{item.title}}</view>
-        <!-- <view class="contenCell">课程简介：
-          <rich-text nodes="{{item.conten}}"/>
-        </view> -->
         <view class="goodsType">{{item.goodStatus == '2'?"预约商品":"平台商品"}}</view>
         <view class="pirce">￥{{item.course_price}}</view>
       </view>
@@ -46,9 +43,9 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 
-<view class="initToBody">
+<!-- <view class="initToBody">
   <view class="topTitle">篮球新闻</view>
   <view class="lis" style="flex-direction: column;" wx:for="{{newsList}}" data-news="news" data-item="{{item}}" wx:key="index" catchtap="toWebView">
     <view class="imgNews">
@@ -56,6 +53,5 @@
     </view>
     <view class="title">{{item.title}}</view>
   </view>
-</view>
-<!-- <rich-text nodes="{{bodyHtml}}"/> -->
-<miniTab></miniTab>
+</view> -->
+<foot></foot>

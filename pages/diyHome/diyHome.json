@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "陈概企业服务",
+  "usingComponents": {
+    "topBackground":"/mycomponent/topBackground/topBackground",
+    "van-grid":"/dist/grid/index",
+    "van-grid-item":"/dist/grid-item/index"
+  }
+}

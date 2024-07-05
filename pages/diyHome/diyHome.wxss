@@ -1,0 +1,47 @@
+/* pages/diyHome/diyHome.wxss */
+
+
+.businessBox {
+  margin: 0 20rpx;
+  background-color: #fff;
+  padding: 35rpx 0;
+  border-radius: 10rpx;
+}
+
+.m_t {
+  margin-top: -90rpx;
+  box-shadow: 0px 2px 10px #ababab;
+}
+
+.headTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headTitle .title {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.headTitle .small {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.gridChild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridChild .iconfont {
+  font-size: 60rpx;
+  color: #fe1345;
+}
+
+.gridChild text {
+  font-size: 24rpx;
+}

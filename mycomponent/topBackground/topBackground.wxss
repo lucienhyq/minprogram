@@ -1,0 +1,35 @@
+/* mycomponent/topBackground/topBackground.wxss */
+.bgBox {
+  height: 400rpx;
+  width: 100%;
+  overflow: hidden;
+  background-color: #999999;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.des{
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  color: #fff;
+}
+.name text{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #fff;
+}
+
+.name .img {
+  width: 70rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}

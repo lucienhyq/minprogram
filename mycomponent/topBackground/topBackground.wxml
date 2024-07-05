@@ -1,0 +1,10 @@
+<!--mycomponent/topBackground/topBackground.wxml-->
+<view class="bgBox">
+  <view class="name">
+    <view class="img">
+      <image src="" mode="" />
+    </view>
+    <text>陈概财税</text>
+  </view>
+  <view class="des">中国领先的360°企业服务机构</view>
+</view>

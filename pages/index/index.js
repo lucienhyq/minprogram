@@ -19,16 +19,22 @@ Page({
     })
   },
   onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-    this.getNews();
-    this.getCourseList();
-    this.getHomemakingList();
-    wx.setNavigationBarTitle({
-      title: '首页',
+
+    // if (wx.getUserProfile) {
+    //   this.setData({
+    //     canIUseGetUserProfile: true
+    //   })
+    // }
+    // this.getNews();
+    // this.getCourseList();
+    // this.getHomemakingList();
+    // wx.setNavigationBarTitle({
+    //   title: '首页',
+    // })
+  },
+  onShow() {
+    wx.redirectTo({
+      url: '/pages/diyHome/diyHome',
     })
   },
   onShareAppMessage: function (e) {
@@ -101,7 +107,7 @@ Page({
     let {
       id
     } = e.currentTarget.dataset;
-    
+
   },
   getHomemakingList(e) {
     app._postNetWork({

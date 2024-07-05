@@ -1,0 +1,20 @@
+<!--pages/diyHome/diyHome.wxml-->
+<topBackground></topBackground>
+<view class="businessBox m_t">
+  <view class="headTitle">
+    <text class="title">核心业务</text>
+    <text class="small">MAIN BUSINESS</text>
+  </view>
+  <view class="gridBox">
+    <van-grid>
+      <van-grid-item use-slot wx:for="{{business}}" wx:key="index">
+        <view slot="" class="gridChild">
+          <icon class="iconfont {{item.icon}}" />
+          <text>{{item.text}}</text>
+        </view>
+      </van-grid-item>
+    </van-grid>
+  </view>
+</view>
+
+<foot></foot>

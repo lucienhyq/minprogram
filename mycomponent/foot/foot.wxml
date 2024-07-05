@@ -1,9 +1,19 @@
 <!--mycomponent/foot/foot.wxml-->
-<view class="posBottom">
-  <van-tabbar active="{{ active }}" bind:change="onChange" placeholder="{{true}}" >
-    <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">工商</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">代理记账</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">知识产权</van-tabbar-item>
-  </van-tabbar>
+<view class="posBottom" style="padding-bottom: {{isPhoneBottom?'34px':''}};">
+  <view class="flexBox" style="color:{{active == 0?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="0">
+    <i class="iconfont icon-zhufang"></i>
+    <view class="p">首页</view>
+  </view>
+  <view class="flexBox" style="color:{{active == 1?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="1">
+    <i class="iconfont icon-SAAS-gongshangfuwu"></i>
+    <view class="p">工商</view>
+  </view>
+  <view class="flexBox" style="color:{{active == 2?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="2">
+    <i class="iconfont icon-dailijizhang"></i>
+    <view class="p">代理记账</view>
+  </view>
+  <view class="flexBox" style="color:{{active == 3?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="3">
+    <i class="iconfont icon-zhishichanquan"></i>
+    <view class="p">知识产权</view>
+  </view>
 </view>

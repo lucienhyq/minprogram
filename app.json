@@ -6,10 +6,14 @@
     "pages/login/login",
     "pages/webView/webView",
     "pages/detail/goodsDetail",
-    "pages/bils/bilsHome/bilsHome"
+    "pages/bils/bilsHome/bilsHome",
+    "pages/diyHome/diyHome",
+    "pages/diyGS/diyGS",
+    "pages/diyJZ/diyJZ",
+    "pages/diyZS/diyZS"
   ],
   "usingComponents": {
-    "miniTab": "./mycomponent/foot/foot"
+    "foot": "./mycomponent/foot/foot"
   },
   "window": {
     "backgroundTextStyle": "light",

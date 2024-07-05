@@ -1,4 +1,41 @@
 /* mycomponent/foot/foot.wxss */
-.posBottom{
-  
+@import "../../mycss/stylesheet.wxss";
+@import "../../mycss/iconfont.wxss";
+
+.posBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posBottom .flexBox {
+  flex: 1;
+  max-width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+}
+
+.posBottom .flexBox .p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  line-height: 32rpx;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+}
+
+.posBottom .flexBox .iconfont {
+  font-size: 24px;
+  line-height: 25px;
 }

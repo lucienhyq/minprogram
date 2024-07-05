@@ -7,6 +7,7 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    this._getSystemInfo();
 
     // // 登录
     // wx.login({
@@ -196,5 +197,19 @@ App({
       },
     })
   },
-
+  _getSystemInfo() {
+    try {
+      const res = wx.getSystemInfoSync();
+      let model = res.model;
+      if (/iPhone X/i.test(model) || /iPhone 11/i.test(model) || /iPhone 12/i.test(model) || /iPhone 13/i.test(model) || /iPhone 14/i.test(model)) {
+        try {
+          wx.setStorageSync("iPhoneBottom", model);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+  },
 })
