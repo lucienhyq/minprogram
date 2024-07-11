@@ -1,6 +1,14 @@
 <!--pages/diyHome/diyHome.wxml-->
 <view class="bgH">
-  <topBackground></topBackground>
+  <topBackground>
+    <view class="name">
+      <view class="img">
+        <image src="" mode="" />
+      </view>
+      <text>{{info.company_name}}</text>
+    </view>
+    <view class="des">中国领先的360°企业服务机构</view>
+  </topBackground>
   <view class="businessBox m_t">
     <view class="headTitle">
       <text class="title">核心业务</text>
@@ -8,7 +16,7 @@
     </view>
     <view class="gridBox">
       <van-grid>
-        <van-grid-item use-slot wx:for="{{business}}" wx:key="index">
+        <van-grid-item use-slot wx:for="{{info.main_business}}" wx:key="index">
           <view slot="" class="gridChild">
             <icon class="iconfont {{item.icon}}" />
             <text>{{item.text}}</text>
@@ -17,13 +25,13 @@
       </van-grid>
     </view>
   </view>
-  <view class="company">
+  <view class="company descBox">
     <view class="company_title">
       <view class="title">公司简介</view>
       <view class="small">COMPANY PROFILE</view>
     </view>
     <view class="company_conten">
-      <mp-html content="{{content}}"></mp-html>
+      <mp-html content="{{info.company_desc}}"></mp-html>
     </view>
   </view>
   <view class="company">
@@ -32,7 +40,7 @@
       <view class="small">DEVELOPMENT PATH</view>
     </view>
     <view class="development_box">
-      <view class="development_lis" wx:for="{{development_history}}">
+      <view class="development_lis" wx:for="{{info.development_history}}">
         <icon class="iconfont icon-jiangpai" />
         <view class="dateYear">{{item.date}}年</view>
         <view class="desc">{{item.desc}}</view>

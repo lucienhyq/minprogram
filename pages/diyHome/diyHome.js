@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    shareMember: null
   },
 
   /**
@@ -70,11 +70,13 @@ Page({
     } = await app._postNetWork({
       url: "card/card_Index",
     });
-    console.log(data)
     if (data.result) {
       this.setData({
-        business: data.data.business,
-        development_history: data.data.development_history
+        info: data.data.data,
+        shareMember: data.data?.shareMember
+      })
+      wx.setNavigationBarTitle({
+        title: data.data.company_name,
       })
     } else {
       wx.showToast({
