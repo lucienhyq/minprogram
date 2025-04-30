@@ -1,5 +1,5 @@
 // app.js
-const host = "http://192.168.0.144:3000/"
+const host = "http://192.168.0.52:3000/api/"
 // const host = "https://lucien.freehk.svipss.top/"
 App({
   onLaunch() {
@@ -23,6 +23,7 @@ App({
       },
     });
   },
+  // data数据
   data: {
     login_type: 1, //1无请求，2正在请求 状态锁
     login_fun_list: [], // 需要登录后再请求的接口队列
@@ -93,15 +94,10 @@ App({
       );
       url += "&" + paramsArray.join("&");
     }
-    let sessionID = wx.getStorageSync('sessionID');
-    if (sessionID) {
-      if (method === 'GET') {
-        url += '&sessionId=' + sessionID
-      } else {
-        data.sessionId = sessionID
-      }
+    let wx_token = wx.getStorageSync('wx_token');
+    if (wx_token) {
+      headers.Authorization = `Bearer ${wx_token}`;
     }
-    console.log(url)
     this.data.login_type = 2;
     wx.request({
       url: this.data.host + url,
@@ -159,7 +155,7 @@ App({
     wx.login({
       success: (_json) => {
         wx.request({
-          url: `${host}apitest/wxMiniLogin`,
+          url: `${host}wxMiniLogin`,
           method: requestType,
           header: {
             'Content-Type': 'application/json',
@@ -170,13 +166,11 @@ App({
             min: "wx"
           },
           success: (res) => {
-            console.log(res)
             this.data.login_type = 1;
             var _data = res.data;
-            console.log(_data.result, ObjData.method)
             if (_data.result == 1) {
-              console.log("登录后", ObjData);
-              wx.setStorageSync('sessionID', _data.sessionID)
+              console.log("登录后", ObjData, _data);
+              wx.setStorageSync('wx_token', _data.data.token)
               if (ObjData.method == 'POST') {
                 that._postNetWork(ObjData);
               } else {

@@ -9,54 +9,15 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
-          "pathName": "pages/bils/bilsHome/bilsHome",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/detail/goodsDetail",
-          "query": "id=17",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/detail/goodsDetail",
-          "query": "id=18",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/login/login",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/webView/webView",
-          "query": "urls=http://localhost:3000/addReferee.html",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/detail/goodsDetail",
-          "query": "id=2",
-          "launchMode": "default",
-          "scene": null,
-          "partialCompile": {
-            "enabled": true,
-            "pages": []
-          }
-        },
-        {
-          "name": "",
+          "name": "pages/member/member_u",
           "pathName": "pages/member/member_u",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
           "query": "",
           "launchMode": "default",
           "scene": null

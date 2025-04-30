@@ -33,9 +33,9 @@ Page({
     // })
   },
   onShow() {
-    wx.redirectTo({
-      url: '/pages/diyHome/diyHome',
-    })
+    // wx.redirectTo({
+    //   url: '/pages/diyHome/diyHome',
+    // })
   },
   onShareAppMessage: function (e) {
     return {

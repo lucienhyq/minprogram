@@ -54,13 +54,16 @@ Component({
       } = e.currentTarget.dataset;
       if (ind == 0) {
         urlstr = "/pages/diyHome/diyHome";
-      } else if (ind == 1) {
-        urlstr = "/pages/diyGS/diyGS";
-      } else if (ind == 2) {
-        urlstr = "/pages/diyJZ/diyJZ";
-      } else if (ind == 3) {
-        urlstr = "/pages/diyZS/diyZS";
+      } else if (ind == 1){
+        urlstr = "/pages/member/member_u";
       }
+      // else if (ind == 1) {
+      //   urlstr = "/pages/diyGS/diyGS";
+      // } else if (ind == 2) {
+      //   urlstr = "/pages/diyJZ/diyJZ";
+      // } else if (ind == 3) {
+      //   urlstr = "/pages/diyZS/diyZS";
+      // }
       wx.redirectTo({
         url: urlstr,
       })

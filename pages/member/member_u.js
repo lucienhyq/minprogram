@@ -25,7 +25,7 @@ Page({
       title: '会员页',
     })
     this.getData();
-    this.getMember();
+    // this.getMember();
   },
   tologin() {
     wx.navigateTo({
@@ -91,7 +91,7 @@ Page({
   },
   getMember() {
     app._postNetWork({
-      url: "orderCountList",
+      url: "find/user",
       success: (resdata) => {
         let res = resdata.data;
         this.setData({
@@ -104,18 +104,18 @@ Page({
     });
   },
   getData() {
-    app._getNetWork({
-      url: "apitest/getMember",
-      success: (resdata) => {
-        let res = resdata.data;
-        this.setData({
-          memberInfo: res.data
-        })
-        console.log(this.data.memberInfo, 'dddddddd12121')
-      },
-      fail: function (res) {
-        console.log(res);
-      }
-    });
+    // app._getNetWork({
+    //   url: "wxMiniLogin",
+    //   success: (resdata) => {
+    //     let res = resdata.data;
+    //     // console.log(res, 'dddddddd12121')
+    //     // this.setData({
+    //     //   memberInfo: res.data
+    //     // })
+    //   },
+    //   fail: function (res) {
+    //     console.log(res);
+    //   }
+    // });
   }
 })

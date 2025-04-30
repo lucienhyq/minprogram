@@ -41,9 +41,8 @@ Page({
   loginbtn(_info) {
     wx.login({
       success: (_json) => {
-        console.log(_json, _info)
         wx.request({
-          url: 'http://localhost:3000/apitest/wxMiniLogin',
+          url: app.data.host + 'wxMiniLogin',
           // url: 'https://lucien.freehk.svipss.top/apitest/wxMiniLogin',
           header: {
             'Content-Type': 'application/json',
@@ -58,7 +57,7 @@ Page({
             console.log(res)
             let resData = res.data;
             wx.setStorageSync('uid', resData.data.id)
-            wx.setStorageSync('sessionID', resData.sessionID)
+            wx.setStorageSync('wx_token', resData.data.token)
             wx.redirectTo({
               url: '/pages/index/index',
             })

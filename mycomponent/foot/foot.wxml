@@ -5,6 +5,10 @@
     <view class="p">首页</view>
   </view>
   <view class="flexBox" style="color:{{active == 1?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="1">
+    <i class="iconfont icon-zhufang"></i>
+    <view class="p">我的</view>
+  </view>
+  <!-- <view class="flexBox" style="color:{{active == 1?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="1">
     <i class="iconfont icon-SAAS-gongshangfuwu"></i>
     <view class="p">工商</view>
   </view>
@@ -15,5 +19,5 @@
   <view class="flexBox" style="color:{{active == 3?'#fd7b0c':''}};" catch:tap="tapRouterUrl" data-ind="3">
     <i class="iconfont icon-zhishichanquan"></i>
     <view class="p">知识产权</view>
-  </view>
+  </view> -->
 </view>
